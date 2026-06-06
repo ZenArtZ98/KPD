@@ -1,4 +1,7 @@
-export const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+export const asset = (path: string) => {
+  const base = import.meta.env.PROD ? import.meta.env.BASE_URL : '/'
+  return `${base}${path.replace(/^\//, '')}`
+}
 
 export const navItems = [
   { label: 'О проекте', href: '#project' },

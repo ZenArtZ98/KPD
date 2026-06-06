@@ -6,7 +6,6 @@ import { Generations } from './components/Generations'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { PixelDirector } from './components/PixelDirector'
-import { ReferenceOverlay } from './components/ReferenceOverlay'
 import { TeamContacts } from './components/TeamContacts'
 import { asset } from './data/content'
 import styles from './components/KpdPage.module.css'
@@ -69,7 +68,6 @@ function App() {
         <TeamContacts />
       </main>
       <PixelDirector />
-      <ReferenceOverlay />
     </>
   )
 }

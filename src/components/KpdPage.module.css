@@ -1262,54 +1262,6 @@
   text-transform: uppercase;
 }
 
-.referenceTool {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 30;
-  pointer-events: none;
-}
-
-.referenceControls {
-  position: relative;
-  z-index: 31;
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.7);
-  pointer-events: auto;
-}
-
-.referenceControls button {
-  min-width: 28px;
-  min-height: 26px;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: transparent;
-  font: 700 11px/1 Arial, sans-serif;
-  cursor: pointer;
-}
-
-.referenceControls input {
-  width: 72px;
-}
-
-.referenceImage {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  z-index: 29;
-  width: min(100vw, 1600px);
-  height: auto;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.referenceMobile {
-  width: min(100vw, 768px);
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .paperPhoto,
   .collectiveCard,
