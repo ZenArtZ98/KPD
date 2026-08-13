@@ -120,14 +120,14 @@ export const contacts = {
   text: 'Мы открыты к сотрудничеству и вашим историям.',
   links: [
     { label: 'info@kpd-film.ru', href: 'mailto:info@kpd-film.ru' },
-    { label: 'kpd_film', href: 'https://t.me/kpd_film' },
+    { label: 'sKPD_A', href: 'https://t.me/sKPD_A' },
     { label: 'kpd.film', href: 'https://vk.com/kpd_film' },
   ],
   letter: 'Твоя история о доме может войти в архив фильма. И вместе сохраним ее.',
 }
 
 export const pixelDirectorLinks = [
-  { label: 'Telegram', href: 'https://t.me/kpd_film' },
+  { label: 'Telegram', href: 'https://t.me/sKPD_A' },
   { label: 'VK', href: 'https://vk.com/kpd_film' },
   { label: 'YouTube', href: 'https://youtube.com/@kpd_film' },
   { label: 'Email', href: 'mailto:info@kpd-film.ru' },
