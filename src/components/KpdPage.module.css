@@ -1130,14 +1130,14 @@
   border-left: 1px solid rgba(255, 247, 235, 0.26);
 }
 
-.collectiveList span {
+.collectiveList > span {
   position: relative;
   padding-left: 34px;
   font: 900 13px/1.1 var(--font-condensed);
   text-transform: uppercase;
 }
 
-.collectiveList span::before {
+.collectiveList > span::before {
   content: "○";
   position: absolute;
   left: 0;
@@ -1878,7 +1878,7 @@
     border-left: 0;
   }
 
-  .collectiveList span {
+  .collectiveList > span {
     padding-left: 24px;
     font-size: 11px;
   }
