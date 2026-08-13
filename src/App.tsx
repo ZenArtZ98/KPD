@@ -5,6 +5,7 @@ import { FilmFrames } from './components/FilmFrames'
 import { Generations } from './components/Generations'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { MediaPlayer } from './components/MediaPlayer'
 import { PixelDirector } from './components/PixelDirector'
 import { TeamContacts } from './components/TeamContacts'
 import { asset } from './data/content'
@@ -49,7 +50,7 @@ function App() {
     '--poster-paper': `url("${asset('assets/decor/5/poster-paper.png')}")`,
     '--stacked-paper': `url("${asset('assets/decor/5/stacked-paper.png')}")`,
     '--polaroid-landscape': `url("${asset('assets/decor/5/polaroid-landscape.png')}")`,
-    '--film-strip': `url("${asset('assets/decor/3/film-strip-3frames.png')}")`,
+    '--film-strip': `url("${asset('assets/decor/3/film-strip-empty.png')}")`,
     '--noise': `url("${asset('assets/decor/4/paper-archive-speckled.png')}")`,
   } as CSSProperties
 
@@ -64,6 +65,7 @@ function App() {
         <AboutFilm />
         <Generations />
         <FilmFrames />
+        <MediaPlayer />
         <Collective />
         <TeamContacts />
       </main>

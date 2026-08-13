@@ -36,11 +36,7 @@ export function Hero() {
         src={asset('assets/images/window.jpg')}
         alt="Окна панельного дома"
       />
-      <img
-        className={`${styles.paperPhoto} ${styles.heroYard}`}
-        src={asset('assets/images/yard.jpg')}
-        alt="Двор района КПД"
-      />
+      <img className={`${styles.paperPhoto} ${styles.heroYard}`} src={asset('assets/images/yard.jpg')} alt="Двор района КПД" />
     </section>
   )
 }

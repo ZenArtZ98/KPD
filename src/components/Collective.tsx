@@ -10,7 +10,7 @@ export function Collective() {
         <div className={styles.collectiveCard}>
           <strong>{collective.cardTitle}</strong>
           <span>{collective.cardText}</span>
-          <small>Мы объединяем кинематографистов, исследователей истории сохраните память о месте.</small>
+          <small>{collective.cardSmall}</small>
         </div>
       </div>
       <div className={styles.collectiveText}>

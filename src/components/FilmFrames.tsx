@@ -8,8 +8,8 @@ export function FilmFrames() {
       <div className={styles.framesCopy}>
         <h2>{frames.title}</h2>
         <p>{frames.subtitle}</p>
-        <a className={styles.smallArrowLink} href="#collective">
-          Смотреть все
+        <a className={styles.smallArrowLink} href="#watch">
+          Смотреть фильм
           <span aria-hidden="true" />
         </a>
       </div>

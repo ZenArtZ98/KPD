@@ -85,6 +85,7 @@
 .aboutFilm,
 .generations,
 .framesSection,
+.mediaPlayerSection,
 .collective,
 .teamContacts {
   position: relative;
@@ -184,6 +185,21 @@
   z-index: 40;
 }
 
+.mediaPlayerSection {
+  --base-fill: linear-gradient(rgba(244, 236, 224, 0.92), rgba(244, 236, 224, 0.94)), #f4ece0;
+  --tear-fill:
+    linear-gradient(rgba(244, 236, 224, 0.92), rgba(244, 236, 224, 0.94)),
+    #f4ece0;
+  --texture-image: var(--paper-striped);
+  --texture-opacity: 0.13;
+  --texture-blend: multiply;
+  --ragged-mask: var(--ragged-3);
+  --ragged-shadow-mask: var(--ragged-shadow-3);
+  --surface-tint: linear-gradient(rgba(244, 236, 224, 0.72), rgba(244, 236, 224, 0.78));
+  --section-surface: var(--surface-tint), var(--texture-image), var(--texture-image), var(--base-fill);
+  z-index: 45;
+}
+
 .teamContacts {
   --base-fill: linear-gradient(rgba(244, 235, 220, 0.92), rgba(244, 235, 220, 0.94)), #f4ebdc;
   --tear-fill:
@@ -232,7 +248,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: clamp(28px, 3.5vw, 54px);
 }
 
 .nav a {
@@ -280,6 +296,7 @@
 .aboutProject::after,
 .generations::after,
 .framesSection::after,
+.mediaPlayerSection::after,
 .collective::after,
 .teamContacts::before {
   content: "";
@@ -334,6 +351,7 @@
 .aboutFilm > *,
 .generations > *,
 .framesSection > *,
+.mediaPlayerSection > *,
 .collective > *,
 .teamContacts > * {
   position: relative;
@@ -345,11 +363,12 @@
 .aboutFilm > .textureLayer,
 .generations > .textureLayer,
 .framesSection > .textureLayer,
+.mediaPlayerSection > .textureLayer,
 .collective > .textureLayer,
 .teamContacts > .textureLayer {
   position: absolute;
   inset: auto -24px calc(-1 * var(--section-overlap) - 10px) -24px;
-  z-index: 0;
+  z-index: 7;
 }
 
 .heroGhost {
@@ -652,7 +671,7 @@
 }
 
 .aboutFilm {
-  min-height: 248px;
+  min-height: 315px;
   margin-top: 0;
   display: grid;
   grid-template-columns: 330px repeat(3, 1fr);
@@ -769,7 +788,7 @@
 }
 
 .generations {
-  min-height: 268px;
+  min-height: 320px;
   margin-top: 0;
   display: grid;
   grid-template-columns: 350px 1fr;
@@ -845,7 +864,7 @@
 }
 
 .framesSection {
-  min-height: 285px;
+  min-height: 350px;
   margin-top: 0;
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -869,7 +888,7 @@
 }
 
 .smallArrowLink {
-  min-width: 112px;
+  min-width: 150px;
   min-height: 38px;
   padding: 0 18px;
   font-size: 12px;
@@ -883,9 +902,10 @@
   position: relative;
   min-width: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(170px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
-  padding: 30px 16px;
+  min-height: 180px;
+  padding: 32px 18px;
   overflow: hidden;
   background: #0f0f0e;
   border: 0;
@@ -899,14 +919,15 @@
   z-index: 3;
   pointer-events: none;
   background: var(--film-strip) center / 100% 100% no-repeat;
+  mix-blend-mode: normal;
 }
 
 .filmStrip figure {
   position: relative;
   z-index: 1;
-  height: 145px;
+  height: 116px;
   margin: 0;
-  padding: 0 8px;
+  padding: 0 7px;
   background: #171717;
 }
 
@@ -917,8 +938,139 @@
   filter: sepia(0.18) contrast(0.98);
 }
 
+.mediaPlayerSection {
+  min-height: 560px;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  padding: calc(56px + var(--section-overlap)) 100px 62px;
+  background: var(--section-surface);
+  background-size: auto, 300px auto, 300px auto, auto, auto;
+  background-position: center, 0 0, -8px -8px, center, center;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat;
+}
+
+.playerCopy p {
+  margin: 0 0 18px;
+  font: 900 16px/1 var(--font-condensed);
+  text-transform: uppercase;
+}
+
+.playerCopy h2 {
+  max-width: 300px;
+  margin: 0;
+  font: 900 54px/0.94 var(--font-heading);
+  text-transform: uppercase;
+}
+
+.playerCopy span {
+  display: block;
+  max-width: 270px;
+  margin-top: 22px;
+  font: 700 13px/1.45 var(--font-body);
+}
+
+.playerFrame {
+  position: relative;
+  min-width: 0;
+  padding: 20px;
+  background:
+    linear-gradient(rgba(250, 240, 222, 0.5), rgba(250, 240, 222, 0.38)),
+    var(--polaroid-landscape),
+    #eadfcd;
+  background-size: auto, 100% 100%, auto;
+  box-shadow: var(--shadow-paper);
+  transform: rotate(-1deg);
+}
+
+.playerFrame::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 92px;
+  height: 26px;
+  background: var(--tape) center / contain no-repeat;
+  transform: translateX(-50%) rotate(2deg);
+}
+
+.playerVideo,
+.playerPlaceholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #171717;
+}
+
+.playerVideo {
+  object-fit: contain;
+}
+
+.playerPlaceholder {
+  position: relative;
+  overflow: hidden;
+  color: #f8ead5;
+}
+
+.playerPlaceholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.2) sepia(0.22) brightness(0.55);
+}
+
+.playerPlaceholder div {
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  max-width: 320px;
+}
+
+.playerPlaceholder strong,
+.playerPlaceholder span {
+  display: block;
+}
+
+.playerPlaceholder strong {
+  font: 900 32px/0.96 var(--font-heading);
+  text-transform: uppercase;
+}
+
+.playerPlaceholder span {
+  margin-top: 10px;
+  font: 700 13px/1.4 var(--font-body);
+}
+
+.playerUpload {
+  position: absolute;
+  right: 20px;
+  bottom: -52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 164px;
+  min-height: 40px;
+  padding: 0 18px;
+  color: var(--ink);
+  border: 1px solid rgba(47, 39, 31, 0.34);
+  background: rgba(235, 222, 200, 0.74);
+  font: 900 12px/1 var(--font-condensed);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.playerUpload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .collective {
-  min-height: 238px;
+  min-height: 330px;
   margin-top: 0;
   display: grid;
   grid-template-columns: 430px 1fr 330px;
@@ -1036,7 +1188,7 @@
 }
 
 .teamContacts {
-  min-height: 232px;
+  min-height: 360px;
   margin-top: 0;
   display: grid;
   grid-template-columns: 1fr 300px 280px;
@@ -1091,13 +1243,14 @@
 
 .member strong {
   margin-top: 10px;
-  font: 900 11px/1.08 var(--font-condensed);
+  min-height: 25px;
+  font: 900 11px/1.12 var(--font-condensed);
   text-transform: uppercase;
 }
 
 .member span {
   margin-top: 4px;
-  font: 700 10px/1.2 var(--font-body);
+  font: 700 10px/1.22 var(--font-body);
 }
 
 .contactsBlock p {
@@ -1650,14 +1803,15 @@
   }
 
   .filmStrip {
-    grid-auto-columns: 132px;
+    grid-auto-columns: 148px;
     grid-auto-flow: column;
     grid-template-columns: none;
     gap: 0;
     margin-top: 16px;
     margin-bottom: 56px;
     margin-right: 0;
-    padding: 24px 10px;
+    min-height: 160px;
+    padding: 27px 12px;
     overflow-x: auto;
     border-width: 7px;
     scrollbar-width: none;
@@ -1668,8 +1822,59 @@
   }
 
   .filmStrip figure {
-    height: 112px;
-    padding: 0 5px;
+    height: 96px;
+    padding: 0 4px;
+  }
+
+  .mediaPlayerSection {
+    min-height: 0;
+    display: block;
+    padding: calc(30px + var(--section-overlap)) 24px 72px;
+  }
+
+  .playerCopy p {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .playerCopy h2 {
+    max-width: 260px;
+    font-size: 31px;
+  }
+
+  .playerCopy span {
+    max-width: none;
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .playerFrame {
+    margin-top: 24px;
+    padding: 10px;
+    transform: rotate(0.7deg);
+  }
+
+  .playerPlaceholder div {
+    left: 16px;
+    right: 16px;
+    bottom: 15px;
+  }
+
+  .playerPlaceholder strong {
+    font-size: 22px;
+  }
+
+  .playerPlaceholder span {
+    font-size: 11px;
+  }
+
+  .playerUpload {
+    right: 10px;
+    bottom: -48px;
+    min-width: 138px;
+    min-height: 36px;
+    font-size: 11px;
   }
 
   .collective {
@@ -1745,13 +1950,12 @@
 
   .teamContacts {
     min-height: 290px;
-    grid-template-columns: 1fr 142px;
-    gap: 18px;
-    padding: calc(22px + var(--section-overlap)) 24px 52px;
+    display: block;
+    padding: calc(24px + var(--section-overlap)) 24px 64px;
   }
 
   .teamBlock {
-    grid-column: 1 / -1;
+    margin-bottom: 28px;
   }
 
   .teamBlock h2,
@@ -1786,6 +1990,7 @@
 
   .contactsBlock {
     min-width: 0;
+    margin-bottom: 24px;
   }
 
   .contactsBlock p {
@@ -1808,6 +2013,8 @@
   }
 
   .letter {
+    width: min(100%, 265px);
+    margin-left: auto;
     min-height: 103px;
     padding: 18px 16px 14px;
     transform: rotate(-5deg);

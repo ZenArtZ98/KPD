@@ -39,7 +39,7 @@ export function PixelDirector() {
             <i />
           </span>
         )}
-        <strong>Режиссёр</strong>
+        <strong>Режиссер</strong>
       </button>
     </aside>
   )
