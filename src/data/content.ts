@@ -119,7 +119,6 @@ export const contacts = {
   title: 'Контакты',
   text: 'Мы открыты к сотрудничеству и вашим историям.',
   links: [
-    { label: 'info@kpd-film.ru', href: 'mailto:info@kpd-film.ru' },
     { label: 'sKPD_A', href: 'https://t.me/sKPD_A' },
     { label: 'kpd.film', href: 'https://vk.com/kpd_film' },
   ],

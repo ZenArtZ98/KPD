@@ -965,13 +965,6 @@
   text-transform: uppercase;
 }
 
-.playerCopy span {
-  display: block;
-  max-width: 270px;
-  margin-top: 22px;
-  font: 700 13px/1.45 var(--font-body);
-}
-
 .playerFrame {
   position: relative;
   min-width: 0;
@@ -1042,32 +1035,6 @@
 .playerPlaceholder span {
   margin-top: 10px;
   font: 700 13px/1.4 var(--font-body);
-}
-
-.playerUpload {
-  position: absolute;
-  right: 20px;
-  bottom: -52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 164px;
-  min-height: 40px;
-  padding: 0 18px;
-  color: var(--ink);
-  border: 1px solid rgba(47, 39, 31, 0.34);
-  background: rgba(235, 222, 200, 0.74);
-  font: 900 12px/1 var(--font-condensed);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.playerUpload input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
 }
 
 .collective {
@@ -1843,13 +1810,6 @@
     font-size: 31px;
   }
 
-  .playerCopy span {
-    max-width: none;
-    margin-top: 12px;
-    font-size: 11px;
-    line-height: 1.4;
-  }
-
   .playerFrame {
     margin-top: 24px;
     padding: 10px;
@@ -1867,14 +1827,6 @@
   }
 
   .playerPlaceholder span {
-    font-size: 11px;
-  }
-
-  .playerUpload {
-    right: 10px;
-    bottom: -48px;
-    min-width: 138px;
-    min-height: 36px;
     font-size: 11px;
   }
 
