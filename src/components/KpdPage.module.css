@@ -924,7 +924,7 @@
 
 .filmStrip figure {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   height: 116px;
   margin: 0;
   padding: 0 7px;

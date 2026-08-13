@@ -129,6 +129,4 @@ export const contacts = {
 export const pixelDirectorLinks = [
   { label: 'Telegram', href: 'https://t.me/sKPD_A' },
   { label: 'VK', href: 'https://vk.com/kpd_film' },
-  { label: 'YouTube', href: 'https://youtube.com/@kpd_film' },
-  { label: 'Email', href: 'mailto:info@kpd-film.ru' },
 ]
