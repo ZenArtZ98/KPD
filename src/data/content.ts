@@ -86,8 +86,8 @@ export const player = {
   title: 'Смотреть фильм',
   eyebrow: 'медиаплеер',
   description:
-    'Здесь будет размещен полный фильм. Для публикации используйте оптимизированный MP4, а локально можно смотреть загруженную MOV-версию или выбрать файл прямо на странице.',
-  sources: [asset('assets/video/kpd-film.mp4'), asset('assets/video/kpd-film.mov')],
+    'Полная версия фильма доступна для просмотра в VK Video. При необходимости можно выбрать локальный видеофайл с устройства.',
+  embedUrl: 'https://vkvideo.ru/video_ext.php?oid=-240620945&id=456239022&hd=2',
   poster: asset('assets/images/poster.png'),
 }
 

@@ -546,7 +546,7 @@
 }
 
 .aboutProject {
-  min-height: 355px;
+  min-height: 440px;
   margin-top: 0;
   display: grid;
   grid-template-columns: 430px 1fr 335px;
@@ -1006,6 +1006,7 @@
 
 .playerVideo {
   object-fit: contain;
+  border: 0;
 }
 
 .playerPlaceholder {

@@ -4,35 +4,6 @@ import styles from './KpdPage.module.css'
 
 export function MediaPlayer() {
   const [localVideo, setLocalVideo] = useState('')
-  const [publishedVideo, setPublishedVideo] = useState('')
-  const videoSource = localVideo || publishedVideo
-  const hasVideo = videoSource.length > 0
-
-  useEffect(() => {
-    let ignore = false
-
-    Promise.all(
-      player.sources.map((source) =>
-        fetch(source, { headers: { Range: 'bytes=0-0' } })
-          .then((response) => {
-            const contentType = response.headers.get('content-type') || ''
-            return response.ok && contentType.startsWith('video/') ? source : ''
-          })
-          .catch(() => ''),
-      ),
-    ).then((sources) => {
-      if (!ignore) {
-        const source = sources.find(Boolean)
-        if (source) {
-          setPublishedVideo(source)
-        }
-      }
-    })
-
-    return () => {
-      ignore = true
-    }
-  }, [])
 
   useEffect(() => {
     return () => {
@@ -59,16 +30,16 @@ export function MediaPlayer() {
         <span>{player.description}</span>
       </div>
       <div className={styles.playerFrame}>
-        {hasVideo ? (
-          <video className={styles.playerVideo} src={videoSource} poster={player.poster} controls playsInline preload="metadata" />
+        {localVideo ? (
+          <video className={styles.playerVideo} src={localVideo} poster={player.poster} controls playsInline preload="metadata" />
         ) : (
-          <div className={styles.playerPlaceholder}>
-            <img src={player.poster} alt="" />
-            <div>
-              <strong>Фильм готов к загрузке</strong>
-              <span>Добавьте MP4-файл или выберите его с устройства.</span>
-            </div>
-          </div>
+          <iframe
+            className={styles.playerVideo}
+            src={player.embedUrl}
+            title={player.title}
+            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
         )}
         <label className={styles.playerUpload}>
           <input
