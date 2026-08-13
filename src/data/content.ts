@@ -1,5 +1,5 @@
 export const asset = (path: string) => {
-  const base = import.meta.env.PROD ? import.meta.env.BASE_URL : '/'
+  const base = import.meta.env.BASE_URL
   return `${base}${path.replace(/^\//, '')}`
 }
 

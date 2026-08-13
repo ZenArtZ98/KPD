@@ -1516,37 +1516,32 @@
 
   .heroGhost,
   .archiveStamp,
+  .heroHouse,
   .heroSchool,
-  .heroWindow {
+  .heroWindow,
+  .heroYard {
     display: none;
   }
 
-  .heroHouse {
-    top: 14px;
-    left: 154px;
-    width: 202px;
-    height: 255px;
-    opacity: 0.9;
-    mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
-  }
-
   .heroText {
-    width: 245px;
+    z-index: 10;
+    width: 218px;
     margin-left: 0;
     padding-top: 78px;
   }
 
   .heroText h1 {
-    font-size: 136px;
+    font-size: 118px;
   }
 
   .slogan {
+    width: 210px;
     margin: 14px 0 18px;
-    font-size: 31px;
+    font-size: 28px;
   }
 
   .lead {
-    width: 218px;
+    width: min(218px, 58vw);
     font-size: 13px;
     line-height: 1.45;
   }
@@ -1560,22 +1555,11 @@
 
   .posterStub {
     top: 112px;
-    right: 24px;
-    width: 126px;
-    height: 188px;
+    right: 14px;
+    width: 112px;
+    height: 176px;
     padding: 0;
     transform: rotate(2deg);
-  }
-
-  .heroYard {
-    display: block;
-    position: absolute;
-    right: 108px;
-    bottom: 28px;
-    z-index: 8;
-    width: 132px;
-    height: 92px;
-    transform: rotate(-6deg);
   }
 
   .aboutProject {
@@ -1743,10 +1727,7 @@
   }
 
   .cityLine {
-    right: 0;
-    bottom: 0;
-    width: 205px;
-    height: 80px;
+    display: none;
   }
 
   .framesSection {
@@ -1764,10 +1745,11 @@
   }
 
   .framesCopy .smallArrowLink {
-    position: absolute;
-    left: 24px;
-    bottom: 26px;
-    z-index: 2;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    z-index: 3;
+    margin-top: 16px;
   }
 
   .filmStrip {
@@ -1776,7 +1758,7 @@
     grid-template-columns: none;
     gap: 0;
     margin-top: 16px;
-    margin-bottom: 56px;
+    margin-bottom: 16px;
     margin-right: 0;
     min-height: 160px;
     padding: 27px 12px;
