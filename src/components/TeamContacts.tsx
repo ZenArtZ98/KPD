@@ -45,7 +45,7 @@ export function TeamContacts() {
         <span aria-hidden="true">♡</span>
       </aside>
       <footer className={styles.footer}>
-        <span>© КПД 2024</span>
+        <span>Created by ZenArtZ.BACKUP</span>
         <a href="#top">К началу</a>
       </footer>
     </section>
