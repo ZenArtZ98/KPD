@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Large source assets kept locally.
+public/assets/video/kpd-film.mov
+public/assets/video/kpd-film.mp4
+public/assets/decor/*.psd
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

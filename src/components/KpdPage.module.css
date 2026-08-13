@@ -304,7 +304,7 @@
   left: -24px;
   right: -24px;
   bottom: calc(-1 * var(--section-overlap));
-  z-index: 8;
+  z-index: 1;
   height: 132px;
   pointer-events: none;
   background: var(--section-surface);
@@ -327,7 +327,7 @@
   left: -24px;
   right: -24px;
   bottom: calc(-1 * var(--section-overlap) - 10px);
-  z-index: 7;
+  z-index: 0;
   height: 132px;
   pointer-events: none;
   background: var(--section-surface);
@@ -368,7 +368,7 @@
 .teamContacts > .textureLayer {
   position: absolute;
   inset: auto -24px calc(-1 * var(--section-overlap) - 10px) -24px;
-  z-index: 7;
+  z-index: 0;
 }
 
 .heroGhost {
@@ -523,7 +523,7 @@
 
 .heroSchool {
   position: absolute;
-  z-index: 7;
+  z-index: 9;
   left: 675px;
   top: 395px;
   width: 360px;
@@ -533,9 +533,9 @@
 
 .heroWindow {
   position: absolute;
-  z-index: 7;
+  z-index: 9;
   right: 210px;
-  top: 562px;
+  top: 520px;
   width: 330px;
   height: 205px;
   transform: rotate(6deg);

@@ -4,25 +4,30 @@ import styles from './KpdPage.module.css'
 
 export function MediaPlayer() {
   const [localVideo, setLocalVideo] = useState('')
-  const [publishedVideoAvailable, setPublishedVideoAvailable] = useState(false)
-  const videoSource = localVideo || (publishedVideoAvailable ? player.source : '')
+  const [publishedVideo, setPublishedVideo] = useState('')
+  const videoSource = localVideo || publishedVideo
   const hasVideo = videoSource.length > 0
 
   useEffect(() => {
     let ignore = false
 
-    fetch(player.source, { headers: { Range: 'bytes=0-0' } })
-      .then((response) => {
-        if (!ignore) {
-          const contentType = response.headers.get('content-type') || ''
-          setPublishedVideoAvailable(response.ok && contentType.startsWith('video/'))
+    Promise.all(
+      player.sources.map((source) =>
+        fetch(source, { headers: { Range: 'bytes=0-0' } })
+          .then((response) => {
+            const contentType = response.headers.get('content-type') || ''
+            return response.ok && contentType.startsWith('video/') ? source : ''
+          })
+          .catch(() => ''),
+      ),
+    ).then((sources) => {
+      if (!ignore) {
+        const source = sources.find(Boolean)
+        if (source) {
+          setPublishedVideo(source)
         }
-      })
-      .catch(() => {
-        if (!ignore) {
-          setPublishedVideoAvailable(false)
-        }
-      })
+      }
+    })
 
     return () => {
       ignore = true

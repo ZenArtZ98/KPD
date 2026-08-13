@@ -86,8 +86,8 @@ export const player = {
   title: 'Смотреть фильм',
   eyebrow: 'медиаплеер',
   description:
-    'Здесь будет размещен полный фильм. Для публикации положите видео в public/assets/video/kpd-film.mp4, а для локального просмотра можно выбрать файл прямо на странице.',
-  source: asset('assets/video/kpd-film.mp4'),
+    'Здесь будет размещен полный фильм. Для публикации используйте оптимизированный MP4, а локально можно смотреть загруженную MOV-версию или выбрать файл прямо на странице.',
+  sources: [asset('assets/video/kpd-film.mp4'), asset('assets/video/kpd-film.mov')],
   poster: asset('assets/images/poster.png'),
 }
 
